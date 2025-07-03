@@ -19,6 +19,8 @@ const ApiService = (() => {
      * @returns {Promise<string>} - The API response
      */
     async function callGroqApi(prompt) {
+        console.log("ApiService: Sending prompt to Groq API via proxy:", prompt.substring(0, 100) + "..."); // Log a snippet of the prompt
+
         try {
             const response = await fetch(config.apiEndpoint, {
                 method: 'POST',
@@ -40,15 +42,33 @@ const ApiService = (() => {
             });
 
             if (!response.ok) {
-                const errorData = await response.json().catch(() => ({}));
-                throw new Error(`API request failed: ${response.status} ${response.statusText} ${JSON.stringify(errorData)}`);
+                let errorDetails = `Proxy request failed with status: ${response.status} ${response.statusText}.`;
+                try {
+                    const errorData = await response.json(); // Our proxy should return JSON
+                    console.error('ApiService: Error response from proxy:', errorData);
+                    errorDetails += ` Details: ${JSON.stringify(errorData)}`;
+                } catch (e) {
+                    const textError = await response.text();
+                    console.error('ApiService: Non-JSON error response from proxy:', textError);
+                    errorDetails += ` Response body: ${textError}`;
+                }
+                throw new Error(errorDetails);
             }
 
             const data = await response.json();
-            return data.choices[0].message.content;
+
+            if (data && data.choices && data.choices.length > 0 && data.choices[0].message && data.choices[0].message.content) {
+                return data.choices[0].message.content;
+            } else {
+                console.error('ApiService: Invalid or incomplete data structure from Groq API:', data);
+                throw new Error('ApiService: Received invalid or incomplete data structure from Groq API.');
+            }
         } catch (error) {
-            console.error('Error calling Groq API:', error);
-            throw error;
+            // Log the full error details here before re-throwing or handling.
+            console.error('ApiService: Error in callGroqApi:', error.message, error.stack ? error.stack : '');
+            // The error object 'error' here will be the one thrown from the try block (e.g. new Error(errorDetails))
+            // or a network error from fetch itself.
+            throw error; // Re-throw the error to be caught by the calling function (e.g., in app.js)
         }
     }
 
