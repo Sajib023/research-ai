@@ -30,10 +30,16 @@ exports.handler = async (event, context) => {
     });
 
     if (!response.ok) {
-      const error = await response.text();
+      const errorText = await response.text();
+      // Log the error server-side (if Netlify logging is checked)
+      console.error(`Groq API Error (${response.status}): ${errorText}`);
       return {
-        statusCode: response.status,
-        body: error
+        statusCode: response.status, // Keep Groq's original status code
+        body: JSON.stringify({ 
+          error: 'Groq API request failed.', 
+          groqStatusCode: response.status,
+          groqResponseBody: errorText 
+        })
       };
     }
 
@@ -43,9 +49,15 @@ exports.handler = async (event, context) => {
       body: JSON.stringify(data)
     };
   } catch (error) {
+    // Log the error server-side
+    console.error('Proxy internal error:', error);
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: error.message })
+      body: JSON.stringify({ 
+        error: 'Proxy internal error.', 
+        errorMessage: error.message,
+        errorStack: error.stack // Optional: consider if stack trace should be exposed
+      })
     };
   }
 };
