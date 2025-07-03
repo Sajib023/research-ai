@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Research Assistant</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dark-theme.css">
+    <link rel="stylesheet" href="css/academic.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js for visualizations -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="dark-mode">
+    <header>
+        <div class="logo">
+            <h1>Academic Research Assistant</h1>
+        </div>
+        <div class="header-controls">
+            <button id="help-btn" class="icon-btn" title="Help">
+                <i class="fas fa-question-circle"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section id="research-input-section" class="active-section">
+            <div class="container">
+                <h2>Research Topic</h2>
+                <p class="section-description">Enter an academic research topic to begin the research process.</p>
+                
+                <form id="research-form">
+                    <div class="form-group">
+                        <label for="research-topic">Research Topic:</label>
+                        <input type="text" id="research-topic" name="research-topic" 
+                            placeholder="e.g., Quantum Computing, Climate Change, Artificial Intelligence" required>
+                    </div>
+                    <button type="submit" class="btn primary-btn">Begin Research</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="research-plan-section" class="hidden-section">
+            <div class="container">
+                <h2>Research Plan</h2>
+                <p class="section-description">Review the research plan generated for your topic.</p>
+                
+                <div id="research-plan-container">
+                    <!-- Research plan will be dynamically inserted here -->
+                </div>
+                
+                <div class="button-group">
+                    <button id="modify-plan-btn" class="btn secondary-btn">Modify Plan</button>
+                    <button id="start-research-btn" class="btn primary-btn">Start Research</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="research-progress-section" class="hidden-section">
+            <div class="container">
+                <h2>Research in Progress</h2>
+                <p class="section-description">The system is conducting research on your topic.</p>
+                
+                <div id="progress-container">
+                    <div id="progress-bar-container">
+                        <div id="progress-bar"></div>
+                    </div>
+                    <p id="progress-status">Researching subtopic 1 of 4...</p>
+                </div>
+                
+                <div id="current-subtopic-container">
+                    <h3 id="current-subtopic-title">Current Subtopic: Introduction and Background</h3>
+                    <div id="subtopic-progress-indicator" class="loading-spinner"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="research-results-section" class="hidden-section">
+            <div class="container">
+                <h2>Research Results</h2>
+                
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="content">Content</button>
+                    <button class="tab-btn" data-tab="visualizations">Visualizations</button>
+                    <button class="tab-btn" data-tab="citations">Citations & References</button>
+                </div>
+                
+                <div id="content-tab" class="tab-content active">
+                    <div id="research-content" class="academic-content">
+                        <!-- Research content will be dynamically inserted here -->
+                    </div>
+                </div>
+                
+                <div id="visualizations-tab" class="tab-content">
+                    <div id="visualization-container">
+                        <div class="chart-container">
+                            <canvas id="main-chart"></canvas>
+                        </div>
+                        <div id="visualization-controls">
+                            <select id="visualization-type">
+                                <option value="bar">Bar Chart</option>
+                                <option value="line">Line Chart</option>
+                                <option value="pie">Pie Chart</option>
+                            </select>
+                            <select id="visualization-data">
+                                <option value="default">Select Data</option>
+                                <!-- Data options will be dynamically inserted here -->
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="citations-tab" class="tab-content">
+                    <div id="citations-container">
+                        <!-- Citations will be dynamically inserted here -->
+                    </div>
+                </div>
+                
+                <div class="button-group">
+                    <button id="new-research-btn" class="btn secondary-btn">New Research</button>
+                    <button id="download-btn" class="btn primary-btn">Download as Markdown</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="comparison-section" class="hidden-section">
+            <div class="container">
+                <h2>Research Comparison</h2>
+                <p class="section-description">Compare multiple research topics side by side.</p>
+                
+                <div id="comparison-container">
+                    <!-- Comparison content will be dynamically inserted here -->
+                </div>
+                
+                <div class="button-group">
+                    <button id="back-to-results-btn" class="btn secondary-btn">Back to Results</button>
+                    <button id="download-comparison-btn" class="btn primary-btn">Download Comparison</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="help-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>How to Use the Academic Research Assistant</h2>
+            <div class="help-content">
+                <h3>Getting Started</h3>
+                <p>Enter an academic research topic in the input field and click "Begin Research" to start.</p>
+                
+                <h3>Research Plan</h3>
+                <p>Review the automatically generated research plan. You can modify it if needed before starting the research process.</p>
+                
+                <h3>Research Results</h3>
+                <p>View your research results in three formats:</p>
+                <ul>
+                    <li><strong>Content:</strong> The full research text with proper academic formatting.</li>
+                    <li><strong>Visualizations:</strong> Charts and graphs generated from the research data.</li>
+                    <li><strong>Citations:</strong> All sources cited in the research with proper academic formatting.</li>
+                </ul>
+                
+                <h3>Downloading Research</h3>
+                <p>Click the "Download as Markdown" button to save your research as a formatted markdown file.</p>
+                
+                <h3>Comparing Research</h3>
+                <p>Use the comparison feature to compare multiple research topics side by side.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="loading-overlay">
+        <div class="loading-spinner"></div>
+        <p id="loading-message">Processing your request...</p>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="js/app.js"></script>
+    <script src="js/topic-analyzer.js"></script>
+    <script src="js/api-service.js"></script>
+    <script src="js/research-manager.js"></script>
+    <script src="js/citation-generator.js"></script>
+    <script src="js/visualizer.js"></script>
+    <script src="js/markdown-export.js"></script>
+</body>
+</html>

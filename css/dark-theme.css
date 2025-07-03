@@ -1,0 +1,170 @@
+/* Dark Theme Styles */
+.dark-mode {
+    --text-primary: #e0e0e0;
+    --text-secondary: #b0b0b0;
+    --background-dark: #121212;
+    --surface-dark: #1e1e1e;
+    --surface-dark-elevated: #2d2d2d;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --hover-bg: rgba(255, 255, 255, 0.05);
+    --code-bg: #2a2a2a;
+}
+
+.dark-mode body {
+    background-color: var(--background-dark);
+    color: var(--text-primary);
+}
+
+.dark-mode header {
+    background-color: var(--surface-dark);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.dark-mode .container {
+    background-color: var(--surface-dark);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode input, 
+.dark-mode textarea, 
+.dark-mode select {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+}
+
+.dark-mode input:focus, 
+.dark-mode textarea:focus, 
+.dark-mode select:focus {
+    border-color: var(--primary-light);
+    box-shadow: 0 0 0 2px rgba(157, 70, 255, 0.2);
+}
+
+.dark-mode .tab-btn {
+    color: var(--text-secondary);
+}
+
+.dark-mode .tab-btn:hover {
+    color: var(--text-primary);
+    background-color: var(--hover-bg);
+}
+
+.dark-mode .tab-btn.active {
+    color: var(--primary-light);
+    border-bottom-color: var(--primary-light);
+}
+
+.dark-mode .modal-content {
+    background-color: var(--surface-dark-elevated);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.dark-mode #current-subtopic-container {
+    background-color: var(--surface-dark-elevated);
+    border: 1px solid var(--border-color);
+}
+
+.dark-mode .research-plan-item {
+    background-color: var(--surface-dark-elevated);
+    border: 1px solid var(--border-color);
+}
+
+.dark-mode .research-plan-item:hover {
+    background-color: var(--hover-bg);
+}
+
+.dark-mode code {
+    background-color: var(--code-bg);
+    color: var(--secondary-light);
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-family: var(--font-monospace);
+    font-size: 0.9em;
+}
+
+.dark-mode pre {
+    background-color: var(--code-bg);
+    padding: 1em;
+    border-radius: var(--border-radius-sm);
+    overflow-x: auto;
+    margin-bottom: var(--spacing-lg);
+    border: 1px solid var(--border-color);
+}
+
+.dark-mode pre code {
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+}
+
+.dark-mode blockquote {
+    border-left: 4px solid var(--primary-color);
+    padding-left: var(--spacing-md);
+    color: var(--text-secondary);
+    font-style: italic;
+    margin: var(--spacing-md) 0;
+}
+
+.dark-mode hr {
+    border: none;
+    height: 1px;
+    background-color: var(--border-color);
+    margin: var(--spacing-lg) 0;
+}
+
+.dark-mode table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: var(--spacing-lg) 0;
+}
+
+.dark-mode th {
+    background-color: var(--surface-dark-elevated);
+    text-align: left;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-bottom: 2px solid var(--border-color);
+}
+
+.dark-mode td {
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.dark-mode tr:hover {
+    background-color: var(--hover-bg);
+}
+
+/* Scrollbar styling for dark mode */
+.dark-mode ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+.dark-mode ::-webkit-scrollbar-track {
+    background: var(--background-dark);
+}
+
+.dark-mode ::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 5px;
+}
+
+.dark-mode ::-webkit-scrollbar-thumb:hover {
+    background: #777;
+}
+
+/* Chart styling for dark mode */
+.dark-mode .chart-container {
+    background-color: var(--surface-dark-elevated);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius-md);
+    border: 1px solid var(--border-color);
+}
+
+/* Tooltip styling for dark mode */
+.dark-mode .tooltip {
+    background-color: var(--surface-dark-elevated);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}

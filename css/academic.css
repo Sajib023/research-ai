@@ -1,0 +1,347 @@
+/* Academic Styling for Research Content */
+
+/* Academic Content Container */
+.academic-content {
+    font-family: var(--font-secondary);
+    line-height: 1.8;
+    padding: var(--spacing-lg);
+}
+
+/* Typography */
+.academic-content h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-top: var(--spacing-xxl);
+    margin-bottom: var(--spacing-lg);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: var(--spacing-sm);
+}
+
+.academic-content h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-md);
+}
+
+.academic-content h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+}
+
+.academic-content h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-sm);
+}
+
+.academic-content p {
+    margin-bottom: var(--spacing-md);
+    text-align: justify;
+}
+
+/* Lists */
+.academic-content ul,
+.academic-content ol {
+    margin-left: var(--spacing-xl);
+    margin-bottom: var(--spacing-lg);
+}
+
+.academic-content li {
+    margin-bottom: var(--spacing-sm);
+}
+
+.academic-content ol {
+    list-style-type: decimal;
+}
+
+.academic-content ul {
+    list-style-type: disc;
+}
+
+.academic-content ul ul,
+.academic-content ol ul {
+    list-style-type: circle;
+}
+
+.academic-content ul ul ul,
+.academic-content ol ul ul {
+    list-style-type: square;
+}
+
+/* Blockquotes */
+.academic-content blockquote {
+    margin: var(--spacing-lg) 0;
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-left: 4px solid var(--primary-color);
+    background-color: rgba(98, 0, 234, 0.05);
+    font-style: italic;
+}
+
+.academic-content blockquote p:last-child {
+    margin-bottom: 0;
+}
+
+/* Tables */
+.academic-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: var(--spacing-lg) 0;
+    font-size: 0.95rem;
+}
+
+.academic-content th {
+    background-color: rgba(255, 255, 255, 0.05);
+    font-weight: 600;
+    text-align: left;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: 1px solid var(--border-color);
+}
+
+.academic-content td {
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: 1px solid var(--border-color);
+}
+
+.academic-content tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+/* Code Blocks */
+.academic-content pre {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: var(--border-radius-sm);
+    padding: var(--spacing-md);
+    overflow-x: auto;
+    margin: var(--spacing-lg) 0;
+    font-family: var(--font-monospace);
+    font-size: 0.9rem;
+}
+
+.academic-content code {
+    font-family: var(--font-monospace);
+    font-size: 0.9rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+}
+
+.academic-content pre code {
+    background-color: transparent;
+    padding: 0;
+}
+
+/* Figures and Images */
+.academic-content figure {
+    margin: var(--spacing-xl) 0;
+    text-align: center;
+}
+
+.academic-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--border-radius-sm);
+}
+
+.academic-content figcaption {
+    margin-top: var(--spacing-sm);
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+/* Citations */
+.academic-content .citation {
+    font-size: 0.8rem;
+    vertical-align: super;
+    color: var(--secondary-color);
+    cursor: pointer;
+    margin-left: 2px;
+}
+
+.academic-content .citation:hover {
+    color: var(--secondary-light);
+}
+
+/* Footnotes */
+.academic-content .footnotes {
+    margin-top: var(--spacing-xxl);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid var(--border-color);
+}
+
+.academic-content .footnote {
+    font-size: 0.9rem;
+    margin-bottom: var(--spacing-md);
+    display: flex;
+}
+
+.academic-content .footnote-number {
+    min-width: 2rem;
+    color: var(--secondary-color);
+}
+
+/* References Section */
+.academic-content .references {
+    margin-top: var(--spacing-xxl);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid var(--border-color);
+}
+
+.academic-content .reference {
+    padding-left: 2rem;
+    text-indent: -2rem;
+    margin-bottom: var(--spacing-md);
+    font-size: 0.95rem;
+}
+
+/* Abstract */
+.academic-content .abstract {
+    font-style: italic;
+    margin: var(--spacing-lg) 0;
+    padding: var(--spacing-lg);
+    background-color: rgba(255, 255, 255, 0.03);
+    border-radius: var(--border-radius-md);
+    border: 1px solid var(--border-color);
+}
+
+/* Keywords */
+.academic-content .keywords {
+    margin-bottom: var(--spacing-lg);
+}
+
+.academic-content .keyword {
+    display: inline-block;
+    background-color: rgba(98, 0, 234, 0.1);
+    color: var(--primary-light);
+    padding: 0.2em 0.6em;
+    border-radius: var(--border-radius-sm);
+    margin-right: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+    font-size: 0.9rem;
+}
+
+/* Research Plan Styling */
+.research-plan-item {
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    background-color: rgba(255, 255, 255, 0.03);
+    border-radius: var(--border-radius-sm);
+    border: 1px solid var(--border-color);
+    transition: background-color var(--transition-fast);
+}
+
+.research-plan-item:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.research-plan-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-sm);
+}
+
+.research-plan-item-title {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.research-plan-item-description {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+/* Citations Tab Styling */
+#citations-container {
+    padding: var(--spacing-md);
+}
+
+.citation-item {
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.citation-item:last-child {
+    border-bottom: none;
+}
+
+.citation-number {
+    display: inline-block;
+    min-width: 2rem;
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+.citation-text {
+    font-size: 0.95rem;
+    padding-left: 2rem;
+    text-indent: -2rem;
+}
+
+/* Comparison Styling */
+.comparison-column {
+    flex: 1;
+    padding: var(--spacing-md);
+    background-color: rgba(255, 255, 255, 0.02);
+    border-radius: var(--border-radius-sm);
+    margin: 0 var(--spacing-sm);
+}
+
+.comparison-column-header {
+    font-weight: 600;
+    font-size: 1.2rem;
+    padding-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+    border-bottom: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.comparison-row {
+    display: flex;
+    margin-bottom: var(--spacing-xl);
+}
+
+.comparison-section-title {
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+    color: var(--primary-light);
+}
+
+/* Print Styles for Academic Content */
+@media print {
+    .academic-content {
+        font-size: 12pt;
+        line-height: 1.6;
+        color: #000;
+        background-color: #fff;
+    }
+    
+    .academic-content a {
+        color: #000;
+        text-decoration: underline;
+    }
+    
+    .academic-content h1, 
+    .academic-content h2, 
+    .academic-content h3, 
+    .academic-content h4 {
+        page-break-after: avoid;
+    }
+    
+    .academic-content p, 
+    .academic-content h2, 
+    .academic-content h3 {
+        orphans: 3;
+        widows: 3;
+    }
+    
+    .academic-content table, 
+    .academic-content figure {
+        page-break-inside: avoid;
+    }
+}
